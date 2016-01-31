@@ -5,18 +5,199 @@ date: "January 30, 2016"
 output: html_document
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+####SRT Assignment 0
+####Alfred Szutu
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
+####ToDo 1
+Compute the diference between 2014 and the
+year  you  started at this university and divide
+this by the diference between 2014 and the year
+you  were  born. Multiply this with 100  to get
+the  percentage of your life you have spent at
+this university. Use brackets if you need them.
 ```{r}
-summary(cars)
+   (2016-2014)/(2016-1994)*100
 ```
 
-You can also embed plots, for example:
 
-```{r, echo=FALSE}
-plot(cars)
+####ToDo2
+Repeat the previous ToDo, but with several
+steps in between. You can give the variables
+any name you want, but the name has to start
+with a letter.
+```{r}
+currentyear <- 2016
+startyear <- 2014
+birthyear <- 1994
+diff_a <- currentyear-startyear
+diff_b <- currentyear-birthyear
+perentage <- diff_a/diff_b
+life_spent <- perentage*100
+life_spent
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+####ToDo3
+Compute the sum of 4, 5, 8 and 11 by first
+combining  them  into  a  vector  and
+then  using  the function sum.
+```{r}
+   v=c(4,5,8,11)
+   sum(v)
+```
+
+####ToDo4
+Plot 100 normal random numbers.
+```{r}
+   x=rnorm(100)
+   plot(x)
+```
+
+####ToDo5
+Find help for the sqrt function.
+```{r}
+   help(sqrt)
+```
+
+####ToDo6
+Make a file called firstscript. R containing
+R code  that generates 100  random  numbers  and
+plots them, and run this script several times.
+```{r}
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/firstscript.R")
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/firstscript.R")
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/firstscript.R")
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/firstscript.R")
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/firstscript.R")
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/firstscript.R")
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/firstscript.R")
+```
+
+####ToDo7
+Put  the  numbers  31  to  60  in  a  vector  named
+P and in a matrix with 6 rows and 5 columns named Q.
+```{r}
+   p=matrix(data=c(seq(from=31, to=60, by=1)),ncol=5)
+   colnames(p)[1:5] <- "Q"
+   p
+```
+
+####ToDo8
+Make  a  script  le  which  constructs  three  random  normal  vectors  of  length  100. Call  these vectors x1, x2 and x3. Make a data frame called t with three columns (called a, b and c) containing  respectively x1, x1+x2 and x1+x2+x3. Call the following functions for this data frame:
+plot(t) and sd(t).
+```{r}
+   source("C:/Users/aszut/Documents/Github/SRT-assignment-0/test.R")
+   a=x1
+   b=x1+x2
+   c=x1+x2+x3
+   t=data.frame(a,b,c)
+   plot(t)
+   sd(t)
+```
+Cannot do standard deviation for the vector
+
+####ToDo9
+what the meaning is of rgb, 
+the last argument of rgb,lwd,pch,cex.
+```{r}
+   help(rgb)
+```
+RGB gives intensities to the colours red, green, and blue respectively.
+The values lie between 0 and 1 and provide a seperate r,g,b vector
+(three-column matrix) passed as R. The 4th vector (alpha) determines
+opacity between 0 and 1, where 0 is fully transparent and 1 is opaque.
+
+####ToDo10
+Make  a  file  called tst1.txt in  Notepad  from
+the  example  in  Figure  4  and  store  it  in  your
+working directory.  Write a script to read it, to
+multiply the column called g by 5 and to store
+it as tst2.txt.
+```{r}
+   d = read.table(file="C:/Users/aszut/Documents/Github/SRT-assignment-0/tst1.txt",header=TRUE)
+   d[2]=d[2]*5
+   d2 = data.frame(d)
+   write.table(d2,file="C:/Users/aszut/Documents/Github/SRT-assignment-0/tst2.txt",row.names=FALSE)
+```
+
+####ToDo11
+Compute the mean of the square root of a vec-
+tor  of  100  random  numbers.   What  happens?
+```{r}
+   sroot=data.frame=sample(100)
+   sqrt(sroot)
+```
+
+####ToDo12
+Make  a  graph  with  on  the  x-axis:  today,  Sin-
+terklaas  2014  and  your  next  birthday  and  on
+the y-axis the number of presents you expect on
+each of these days
+```{r}
+   m <- c(strptime(c("20141206","20161110"),format="%Y%m%d"))
+   n <- c(1,5)
+   plot(m,n,main="Number of presents vs date",xlab="Date",ylab="# of presents")
+```
+
+####ToDo13
+Make a vector from 1 to 100.  Make a for-loop
+which runs through the whole vector.  Multiply
+the elements which are smaller than 5 and larger
+than 90 with 10 and the other elements with 0.1.
+```{r}
+   h=1:100
+   values=c()
+   for(i in h)
+   {
+     if(i <= 5)
+     {values[i]=h[i]*10}
+     else if(i >= 90)
+     {values[i]=h[i]*10}
+     else
+     {values[i]=h[i]*0.1}
+   }
+   values
+```
+
+####ToDo14
+Write  a  function  for  the  previous  ToDo,  so
+that   you   can   feed   it   any   vector   you   like
+(as  argument).    Use  a  for-loop  in  the  func-
+tion  to  do  the  computation  with  each  ele-
+ment.
+```{r}
+fun=function(arg1,arg2)
+{
+  h=arg1:arg2
+  values=c()
+  for(i in h)
+  {
+    if(i <= 5)
+    {values[i]=h[i]*10}
+    else if(i >= 90)
+    {values[i]=h[i]*10}
+    else
+    {values[i]=h[i]*0.1}
+  }
+  values
+}
+fun(arg1=1,arg2=100)
+```
+
+####Footnote
+The  ToDo  above  can  be  done  more  easily
+and quickly without a for-loop but with regular vector-
+computations.
+```{r}
+fun2=function(arg1,arg2)
+{
+  values <- arg1:arg2
+  if(length(values)>1)
+  {
+    values[c(seq(from=5,to=90))]=values[c(seq(from=5,to=90))] * 0.1
+    values[c(seq(from=arg1,to=5))]=values[c(seq(from=arg1,to=5))] * 10
+    values[c(seq(from=90,to=arg2))]=values[c(seq(from=90,to=arg2))] *10
+  }
+  values
+}
+fun2(arg1=1,arg2=105)
+```
