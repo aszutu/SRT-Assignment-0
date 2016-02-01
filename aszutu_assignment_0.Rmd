@@ -8,6 +8,11 @@ output: html_document
 ####SRT Assignment 0
 ####Alfred Szutu
 
+####Introduction to R
+(ref:https://www.r-project.org/about.html)
+R is a programming language and environment for statistical computing and graphics. Statistical and graphical techniques can be applied to do calculations,
+plot graphs, analyze data, etc. 
+
 ####ToDo 1
 Compute the diference between 2014 and the
 year  you  started at this university and divide
@@ -201,3 +206,10 @@ fun2=function(arg1,arg2)
 }
 fun2(arg1=1,arg2=105)
 ```
+
+####Document references
+https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
+http://nicercode.github.io/guides/reports/
+http://kbroman.org/knitr_knutshell/pages/Rmarkdown.html
+
+use of help() to understand topics and packages.
